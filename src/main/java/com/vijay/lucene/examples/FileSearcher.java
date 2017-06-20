@@ -57,6 +57,9 @@ public class FileSearcher {
 		TopDocs results = searcher.search(query, 5 * hitsPerPage);
 		ScoreDoc[] hits = results.scoreDocs;
 
+		for (ScoreDoc docs : hits) {
+			System.out.println(docs);
+		}
 		int numTotalHits = results.totalHits;
 		System.out.println(numTotalHits + " total matching documents");
 
